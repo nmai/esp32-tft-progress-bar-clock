@@ -1,0 +1,16 @@
+#define FOREACH_METHOD(METHOD) \
+        METHOD(GET)   \
+        METHOD(POST)  \
+        METHOD(PUT)  \
+        METHOD(DELETE)   \
+
+#define GENERATE_ENUM(ENUM) ENUM,
+#define GENERATE_STRING(STRING) #STRING,
+
+typedef enum HTTP_METHOD_ENUM {
+    FOREACH_METHOD(GENERATE_ENUM)
+};
+
+static const char *HTTP_METHOD_STRING[] = {
+    FOREACH_METHOD(GENERATE_STRING)
+};
