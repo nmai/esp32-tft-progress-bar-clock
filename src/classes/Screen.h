@@ -27,7 +27,7 @@
 #define BUTTON_1            35
 #define BUTTON_2            0
 
-#define SCALE               2
+#define SCALE               3
 
 
 class Screen {       // The class

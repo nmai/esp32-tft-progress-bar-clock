@@ -9,7 +9,7 @@ const int FONT_DEFAULT_WIDTH = 6;
 const int FONT_DEFAULT_HEIGHT = 8;
 const int FONT_PT9_WIDTH = 11;
 const int FONT_PT9_HEIGHT = 30;
-const int CHAR_WIDTH = SCALE * FONT_DEFAULT_WIDTH;// * FONT_PT9_WIDTH;
+const int CHAR_WIDTH = SCALE * FONT_DEFAULT_WIDTH;
 
 Screen::Screen() {
   sprintf(clock_lastHour, "%s", "00");
@@ -129,7 +129,7 @@ void Screen::Home() {
 
 /** @todo - let's redraw smarter, we only really need to draw 2 lines every cycle once the initial painting is in place */
 const bool DRAW_MARKERS = true;
-const bool DRAW_LABELS = true;
+const bool DRAW_LABELS = false;
 
 void Screen::ProgressBarClock() {
   const uint8_t ogDatum = tft.getTextDatum();
