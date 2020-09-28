@@ -192,6 +192,10 @@ void Screen::Clock() {
 
   DateTimeParts parts = DateTime.getParts();
   int hours = parts.getHours();
+  if (hours == 0)   // 12hr conversion - midnight thru 1am
+    hours = 12;
+  if (hours >= 13)  // 12hr conversion - all PM hours, except noon ... 12hr format sure is strange
+    hours -= 12;
   int minutes = parts.getMinutes();
   int seconds = parts.getSeconds();
   const bool redrawHours = atoi(clock_lastHour) != hours;
